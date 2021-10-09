@@ -1,0 +1,77 @@
+
+
+create table airline (
+id int(11) auto_increment,
+airlinename varchar(255),
+contactnumber varchar(50),
+contactaddress varchar(255),
+flightnumber varchar(255),
+fromloc varchar(255),
+toloc varchar(255),
+startdatetime varchar(255),
+enddatetime varchar(255),
+scheduleddays varchar(255),
+instrumentused varchar(255),
+busclsseats int(4),
+nonbusclsseats int(4),
+ticketcost varchar(255),
+noofrows int(4),
+meal varchar(255),
+isactive int(4) default 1,
+primary key(id)
+);
+
+create table users(
+id int(11) auto_increment,
+firstname varchar(255),
+lastname varchar(255),
+username varchar(255),
+pwd varchar(255),
+email varchar(255),
+role varchar(255),
+address varchar(255),
+contactnumber varchar(50),
+primary key(id)
+);
+
+create table seats (
+id int(11) auto_increment,
+seatnumber varchar(255),
+primary key(id)
+);
+
+
+create table user_bookings(
+id int(11) auto_increment,
+flightid varchar(255),
+flightname varchar(255),
+fromloc varchar(255),
+toloc varchar(255),
+seatnumber varchar(255),
+passengername varchar(255),
+gender varchar(1),
+age varchar(3),
+ticketprice varchar(255),
+journeydate varchar(255),
+bookingdatetime varchar(255),
+status int(1),
+mealpreference varchar(1),
+totalprice varchar(255),
+emailid varchar(255),
+primary key(id)
+);
+
+-- airline
+insert into airline  (airlinename, contactnumber, contactaddress) values ('Indigo', '0124 617 3838', 'Tower C, Global Business Park');
+insert into airline  (airlinename, contactnumber, contactaddress) values ('GoAir', '1800 210 0999', '1st Floor, C-1, Wadia International Centre');
+insert into airline  (airlinename, contactnumber, contactaddress) values ('SpiceJet', '0124 498 3410', 'Phase-IV, Gurgaon- 122016');
+
+-- users
+
+insert into users(firstname, lastname, username, pwd, email, role, address, contactnumber) values ('Siva','Palem','siva123','siva@123','siva123@gmail.com','user','Hyderabad','9988776655');
+insert into users(firstname, lastname, username, pwd, email, role, address, contactnumber) values ('Sankar','Uppu','sankar321','sankar@123','sankar321','user','Hyderabad','8899776655');
+insert into users(firstname, lastname, username, pwd, email, role, address, contactnumber) values ('Dhanunjay','T','dhana123','dhana@123','dhana123@gmail.com','admin','Hyderabad','7788996655');
+
+-- seats
+insert into seats(seatnumber) values('1A'),('2A'),('3A'),('4A'),('5A'),('1B'),('2B'),('3B'),('4B'),('5B'),('1C'),('2C'),('3C'),('4C'),('5C');
+

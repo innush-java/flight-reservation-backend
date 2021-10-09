@@ -1,0 +1,226 @@
+{
+	"variables": [],
+	"info": {
+		"name": "AirLines",
+		"_postman_id": "610c4504-e2d8-0411-ec26-fcdf223a461d",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User Login",
+			"request": {
+				"url": "localhost:8080/api/v1.0/flight/user/login",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\n\t\"userName\":\"siva123\",\n\t\"password\":\"siva@123\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get AirLines",
+			"request": {
+				"url": "http://localhost:8080/api/v1.0/flight/airlines",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Book flight - Single/Multiple/Family",
+			"request": {
+				"url": "http://localhost:8080/api/v1.0/flight/booking/ch1",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"flightname\":\"Indigo\",\r\n   \"fromloc\":\"Hyderabad\",\r\n   \"toloc\":\"Bangalore\",\r\n   \"passengers\": [\r\n   \t{\r\n   \t\t\"seatnumber\":\"1A\",\r\n\t\t\"passengername\":\"Dhana\",\r\n\t\t\"gender\":\"M\",\r\n\t\t\"age\":28\r\n   \t},\r\n   \t{\r\n   \t\t\"seatnumber\":\"2A\",\r\n\t\t\"passengername\":\"Test\",\r\n\t\t\"gender\":\"M\",\r\n\t\t\"age\":20\r\n   \t}\r\n   \t],\r\n   \"ticketprice\":\"500.75\",\r\n   \"journeydate\":\"2021-10-10\",\r\n   \"bookingdatetime\":\"2021-10-10\",\r\n   \"mealpreference\":\"Y\",\r\n   \"totalprice\":\"2000\",\r\n   \"emailid\":\"dhana123@gmail.com\"\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get Ticket Details",
+			"request": {
+				"url": "http://localhost:8080/api/v1.0/flight/ticket/2",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Booking History by EmailId",
+			"request": {
+				"url": "http://localhost:8080/api/v1.0/flight/booking/history/dhana123@gmail.com",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Search Flight",
+			"request": {
+				"url": "localhost:8080/api/v1.0/flight/search",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\":\"1\",\n\t\"airlineName\":\"Indigo\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "User Registration",
+			"request": {
+				"url": "localhost:8080/api/v1.0/flight/user/register",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"firstName\":\"Dhanunjay\",\r\n   \"lastName\":\"Dhanunjay\",\r\n   \"userName\":\"Dha123\",\r\n   \"password\":\"Dha@123\",\r\n   \"email\":\"Dha123@gmail.com\",\r\n   \"address\":\"Hyderabad\",\r\n   \"contactNumber\":\"9986556723\"\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Cancel a Ticket",
+			"request": {
+				"url": "http://localhost:8080/api/v1.0/flight/booking/cancel/1",
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get Seats",
+			"request": {
+				"url": "http://localhost:8080/api/v1.0/flight/seats",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Admin Login",
+			"request": {
+				"url": "localhost:8081/api/v1.0/flight/admin/loginc1c",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\n\t\"userName\":\"dhana123\",\n\t\"password\":\"dhana@123\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Admin - Add new AirLine",
+			"request": {
+				"url": "localhost:8081/api/v1.0/flight/airline/register",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"airlineName\":\"Test\",\r\n   \"contactNumber\":\"3745734934\",\r\n   \"contactAddress\":\"Hyd\",\r\n   \"flightnumber\":\"ch5\",\r\n   \"fromloc\":\"Hyd\",\r\n   \"toloc\":\"Chennai\",\r\n   \"startdatetime\":\"2021-10-06 15:20:20\",\r\n   \"enddatetime\":\"2021-10-07 15:20:20\",\r\n   \"scheduleddays\":null,\r\n   \"instrumentused\":null,\r\n   \"busclsseats\":3,\r\n   \"nonbusclsseats\":8,\r\n   \"ticketcost\":\"\",\r\n   \"noofrows\":4,\r\n   \"meal\":\"\",\r\n   \"isactive\":1\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Admin - Update existing AirLine",
+			"request": {
+				"url": "localhost:8081/api/v1.0/flight/airline/inventory/add/5",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"airlineName\":\"Test\",\r\n   \"contactNumber\":\"3745734934\",\r\n   \"contactAddress\":\"Hyd\",\r\n   \"flightnumber\":\"ch5\",\r\n   \"fromloc\":\"Hyd\",\r\n   \"toloc\":\"Chennai\",\r\n   \"startdatetime\":\"2021-10-06 15:20:20\",\r\n   \"enddatetime\":\"2021-10-07 15:20:20\",\r\n   \"scheduleddays\":null,\r\n   \"instrumentused\":null,\r\n   \"busclsseats\":3,\r\n   \"nonbusclsseats\":8,\r\n   \"ticketcost\":\"2000\",\r\n   \"noofrows\":4,\r\n   \"meal\":\"\",\r\n   \"isactive\":1\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Fetch flights - From And To",
+			"request": {
+				"url": "http://localhost:8080/api/v1.0/flight/airlinesbyfromandto",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"fromloc\":\"Hyd\",\r\n   \"toloc\":\"Chennai\"\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
